@@ -73,6 +73,7 @@ std::ostream &operator << (std::ostream &os, const LoraChannelParameters &params
 class LoraChannel : public Channel
 {
 public:
+
   // TypeId
   static TypeId GetTypeId (void);
 

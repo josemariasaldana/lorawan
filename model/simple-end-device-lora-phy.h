@@ -27,6 +27,7 @@
 #include "ns3/nstime.h"
 #include "ns3/mobility-model.h"
 #include "ns3/node.h"
+#include "ns3/nstime.h"
 #include "ns3/end-device-lora-phy.h"
 
 namespace ns3 {
@@ -59,6 +60,12 @@ public:
   virtual void Send (Ptr<Packet> packet, LoraTxParameters txParams,
                      double frequencyMHz, double txPowerDbm);
 
+  // Get toa
+  virtual Time ToA (Ptr<Packet> packet, LoraTxParameters txParams)
+  {
+    return GetOnAirTime (packet, txParams);
+  }
+  
 private:
 };
 
